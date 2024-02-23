@@ -1,0 +1,206 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0a0e2e;
+  overflow: hidden;
+}
+
+.App {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.star {
+  position: absolute;
+  background-color: #fff; /* White */
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  animation: shine 5s infinite linear, rotate 10s infinite linear;
+}
+
+@keyframes shine {
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.confetti-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  animation: confetti-fall 1s ease-out;
+}
+
+img {
+  height: 300px;
+  width: 300px;
+  filter: drop-shadow(-3px -3px white) drop-shadow(3px -3px white)
+    drop-shadow(-3px 3px white) drop-shadow(3px 3px white);
+}
+.poop {
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  padding: 10px;
+  background-color: darkgray;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  animation: rock 4s ease infinite;
+  background: transparent;
+  font-size: 12rem;
+  border-radius: 50%;
+  text-shadow: -3px -3px 0 white, 3px -3px 0 white, -3px 3px 0 white,
+    3px 3px 0 white;
+}
+.dog {
+  scale: 1.5;
+  position: absolute;
+  padding: 10px;
+  top: 10%;
+  left: 20%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  animation: rock 2.5s infinite;
+  background: transparent;
+  font-size: 12rem;
+  border-radius: 50%;
+  text-shadow: -3px -3px 0 white, 3px -3px 0 white, -3px 3px 0 white,
+    3px 3px 0 white;
+}
+
+.dog:active {
+  scale: 1.2;
+  user-select: none;
+}
+
+.poop:active,
+.ghost:active,
+.bobbo:active,
+.car:active {
+  scale: 0.9;
+  user-select: none;
+}
+
+@keyframes rock {
+  0%,
+  100% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+
+.ghost {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  padding: 10px;
+  background-color: darkgray;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  animation: rock 4s ease infinite;
+  background: transparent;
+  font-size: 12rem;
+  border-radius: 50%;
+  text-shadow: -3px -3px 0 white, 3px -3px 0 white, -3px 3px 0 white,
+    3px 3px 0 white;
+}
+.bobbo {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  padding: 10px;
+  background-color: darkgray;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  animation: rock 8s linear infinite;
+  background: transparent;
+  font-size: 12rem;
+  border-radius: 50%;
+  text-shadow: -3px -3px 0 white, 3px -3px 0 white, -3px 3px 0 white,
+    3px 3px 0 white;
+}
+.car {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  padding: 10px;
+  background-color: darkgray;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  animation: rock 3s linear infinite;
+  background: transparent;
+  font-size: 12rem;
+  border-radius: 50%;
+  text-shadow: -3px -3px 0 white, 3px -3px 0 white, -3px 3px 0 white,
+    3px 3px 0 white;
+}
+
+.wrong {
+  filter: drop-shadow(16px 16px 20px red) blur(5px);
+  animation: rock 0.1s ease infinite;
+  scale: 0.9;
+}
+
+.startBtn {
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 10rem;
+  border-radius: 50%;
+  text-shadow: -3px -3px 0 white, 3px -3px 0 white, -3px 3px 0 white,
+    3px 3px 0 white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+}
+
+.startBtn:active {
+  font-size: 9rem;
+}
+
+.overlay {
+  height: 100vh;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  z-index: 1;
+}
